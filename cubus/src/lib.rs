@@ -38,6 +38,7 @@
 //! - `carrier_spectrum` / `spectral_distance` — frequency fingerprinting
 //! - `CarrierRecord` — hybrid binary + carrier containers
 
+pub mod awareness;
 pub mod carrier;
 pub mod cogrecord_v3;
 pub mod delta_layer;
@@ -66,6 +67,11 @@ pub use focus::{
     focus_unbind_phase, focus_xor, focus_xor_auto, focus_xor_materialized, materialize_focus_mask,
     pack_focus, unpack_focus, CompactDelta, FocusDensity, FocusRegistry, FOCUS_DIM_X, FOCUS_DIM_Y,
     FOCUS_DIM_Z,
+};
+
+pub use awareness::{
+    evaluate_enriched_gate, selective_merge, AwarenessConfig, AwarenessLoop, EnrichedGate,
+    EnrichedGateThresholds, FeedbackMode, MomentMetadata, ThinkingCluster, ThinkingStyleMix,
 };
 
 pub use delta_layer::{DeltaLayer, LayerStack};
